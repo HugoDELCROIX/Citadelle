@@ -4,7 +4,7 @@ public class Quartier {
     private String nom;
     private String type;
     private int coutConstruction;
-    private String caractéristiques;
+    private String caracteristiques;
     public static final String[] TYPE_QUARTIERS = {
         "RELIGIEUX",
         "MILITAIRE",
@@ -15,26 +15,26 @@ public class Quartier {
 
     public Quartier() {
         super();
-        this.nom ="";
+        this.nom = "";
         this.type = "";
         this.coutConstruction = 0;
-        this.caractéristiques = "";
-        }
-        
-        public Quartier(String nom, String type, int coutConstruction, String caracteristiques) {
+        this.caracteristiques = "";
+    }
+
+    public Quartier(String nom, String type, int coutConstruction, String caracteristiques) {
         super();
         this.nom = nom;
         this.type = type;
         this.coutConstruction = coutConstruction;
-        this.caractéristiques = caracteristiques;
-        }
-        public Quartier(String nom, String type, int coutConstruction) {
+        this.caracteristiques = caracteristiques;
+    }
+    public Quartier(String nom, String type, int coutConstruction) {
         super();
         this.nom = nom;
         this.type = type;
         this.coutConstruction = coutConstruction;
-        this.caractéristiques = "";
-        }
+        this.caracteristiques = "";
+    }
 
     public String getNom() {
         return this.nom;
@@ -47,8 +47,8 @@ public class Quartier {
         return this.type;
     }
     public void setType(String type) {
-        for(String typeQt : Quartier.TYPE_QUARTIERS){
-            if(typeQt == type){
+        for (String typeQt: Quartier.TYPE_QUARTIERS) {
+            if (typeQt == type) {
                 this.type = type;
                 break;
             } else {
@@ -69,18 +69,17 @@ public class Quartier {
         return this.coutConstruction;
     }
     public void setCout(int coutConstruction) {
-        if(1<=coutConstruction && coutConstruction<=6){
-            this.coutConstruction=coutConstruction;
-        }
-        else {
-            coutConstruction=0;
+        if (1 <= coutConstruction && coutConstruction <= 6) {
+            this.coutConstruction = coutConstruction;
+        } else {
+            coutConstruction = 0;
         }
     }
 
-    public String getCaracteristiques(){
-        return caractéristiques;
+    public String getCaracteristiques() {
+        return caracteristiques;
     }
-    public void setCaracteristiques(String caractéristiques){
-        this.caractéristiques=caractéristiques;
+    public void setCaracteristiques(String caracteristiques) {
+        this.caracteristiques = caracteristiques;
     }
 }
