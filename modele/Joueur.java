@@ -31,7 +31,7 @@ public class Joueur {
         return this.nbQuartiers;
     }
 
-    public Quartier[] getCite() {
+    public Quartier[] getCite() {   
         return this.cite;
     }
 
@@ -60,7 +60,7 @@ public class Joueur {
     }
 
     public void retirerPieces(int piece) {
-        if (piece < tresor) {
+        if (piece <= tresor) {
             if (piece > 0) {
                 tresor = tresor - piece;
             } else {
@@ -112,8 +112,9 @@ public class Joueur {
     }
 
     public void reinitialiser() {
-        tresor=0;
-        main =  new ArrayList<Quartier>();
-        cite = new Quartier[8];
+        this.tresor = 0;
+        this.main =  new ArrayList<Quartier>();
+        this.cite = new Quartier[8];
+        this.nbQuartiers = 0;
     }
 }
