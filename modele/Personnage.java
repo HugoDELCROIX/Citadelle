@@ -22,7 +22,7 @@ public abstract class Personnage{
         return this.rang;
     }
 
-    public String Caracteristiques(){
+    public String getCaracteristiques(){
         return this.caracteristiques;
     }
 
