@@ -2,7 +2,7 @@ package modele;
 
 public class PlateauDeJeu {
     private Personnage[] listePersonnages;
-    private Joueur[] joueur;
+    private Joueur[] listeJoueurs;
     private Pioche pioche;
     private int nombrePersonnages;
     private int nombreJoueurs;
@@ -15,7 +15,40 @@ public class PlateauDeJeu {
         //constructeur (lien de composition dans le diagramme de classe).
     }
 
-    public void getNombrePersonnages(){
+    public int getNombrePersonnages(){
+        return nombrePersonnages;
+    }
+
+    public int getNombreJoueurs(){
+        return nombreJoueurs;
+    }
+
+    public Pioche getPioche(){
+        return pioche;
+    }
+
+    public Personnage getPersonnages(int i){
+        if(0<=i && i<=8){
+            return listePersonnages[i];
+        } else {
+            return null;
+        }
+    }
+
+    public Joueur getJoueur(int i){
+        if(0<=i && i<=8){
+            return listeJoueurs[i];
+        } else {
+            return null;
+        }
+    }
+
+    public void ajouterPersonnage(){
         
     }
+
+    public void ajouterJoueur(){
+        
+    }
+
 }
