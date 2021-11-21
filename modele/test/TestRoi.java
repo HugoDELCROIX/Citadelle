@@ -24,7 +24,9 @@ public class TestRoi {
 	public void test1(){
 		System.out.println("TEST DU CONSTRUCTEUR");
 		Roi roi = new Roi();
+		System.out.println("Une instance de Roi est bien crée");
 		Test.test(roi.getNom().equals("Roi"),"test du nom du personnage Roi");
+		System.out.println("Nom du personnage valide"); 	
 		Test.test(roi.getRang()== 4,"test du rang du personnage Roi");
 		Test.test(roi.getCaracteristiques().equals(Caracteristiques.ROI),
 				"test des caract�ristiques du personnage Roi");

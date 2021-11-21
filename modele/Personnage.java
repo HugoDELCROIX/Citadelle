@@ -10,6 +10,9 @@ public abstract class Personnage{
     private PlateauDeJeu plateau;
 
     public Personnage(String nom,int rang,String caracteristiques){
+        this.nom = nom;
+        this.rang = rang;
+        this.caracteristiques = caracteristiques;
         joueur = null;
         assassine = false;
         vole = false;
