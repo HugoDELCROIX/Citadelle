@@ -4,48 +4,30 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Pioche {
-
-    private ArrayList < Quartier > liste = new ArrayList<Quartier>();
-
-    public Pioche() {
-        ArrayList < Quartier > liste = new ArrayList<Quartier>();
+    private ArrayList<Quartier> liste;
+    public Pioche(){
+        this.liste = new ArrayList<Quartier>();
     }
 
-    public ArrayList < Quartier > getListe() {
-        return liste;
+    public Quartier piocher(){
+        return this.liste.size() > 0 ? this.liste.remove(0) : null;
     }
 
-    public void setListe(ArrayList < Quartier > liste) {
-        this.liste = liste;
+    public void ajouter(Quartier quartier){
+        this.liste.add(quartier);
     }
 
-    public Quartier piocher() {
-        Quartier q = new Quartier();
-        q = null;
-        for (int i = 0; i < liste.size(); i++) {
-            if (liste.get(i) != null) {
-                q = liste.get(i);
-                break;
-            }
-        }
-        return q;
+    public int nombreElements(){
+        return this.liste.size();
     }
 
-    public void ajouter(Quartier nouveau) {
-        liste.add(nouveau);
-    }
-
-    public int nombreElements() {
-        int i;
-        i = liste.size();
-        return i;
-    }
-
-    public void melanger() {
+    public void melanger(){
         Random generateur = new Random();
-        for (int i = 0; i < liste.size(); i++) {
-            int k = generateur.nextInt();
-            int j = generateur.nextInt();
-        }
+        int i = generateur.nextInt(this.nombreElements());
+        int j = generateur.nextInt(this.nombreElements());
+        Quartier tempQuartier;
+        tempQuartier = liste.get(i);
+        liste.set(i, liste.get(j));
+        liste.set(j, tempQuartier);
     }
 }
