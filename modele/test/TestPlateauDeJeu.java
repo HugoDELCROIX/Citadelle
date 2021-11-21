@@ -10,9 +10,9 @@ public class TestPlateauDeJeu {
 
 	public static void main(String[] args) {
 		TestPlateauDeJeu testPlateau = new TestPlateauDeJeu();
-		//testPlateau.test1();
-		//testPlateau.test2();	
-		//testPlateau.test3();
+		testPlateau.test1();
+		testPlateau.test2();	
+		testPlateau.test3();
 		testPlateau.test4();
 	}
 	
@@ -28,7 +28,9 @@ public class TestPlateauDeJeu {
 	public void test2() {
 		System.out.println("TEST DE L'AJOUT D'UN JOUEUR");
 		PlateauDeJeu plateau = new PlateauDeJeu();
+		System.out.println("PlateauDeJeu est instancié");
 		Joueur joueur = new Joueur("Billy");
+		System.out.println("Joueur instancié");
 		plateau.ajouterJoueur(joueur);
 		Test.test(plateau.getNombreJoueurs()== 1,"nombre de joueurs");
 		Test.test(plateau.getJoueur(0)== joueur,

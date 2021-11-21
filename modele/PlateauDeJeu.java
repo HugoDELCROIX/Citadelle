@@ -9,25 +9,25 @@ public class PlateauDeJeu {
 
     public PlateauDeJeu() {
         this.listePersonnages = new Personnage[9];
+        this.listeJoueurs = new Joueur[9];
         this.nombreJoueurs = 0;
         this.nombrePersonnages = 0;
-        //En ce qui concerne la pioche, vous devrez cr´eer une instance de la pioche dans ce 
-        //constructeur (lien de composition dans le diagramme de classe).
+        this.pioche = new Pioche();
     }
 
     public int getNombrePersonnages(){
-        return nombrePersonnages;
+        return this.nombrePersonnages;
     }
 
     public int getNombreJoueurs(){
-        return nombreJoueurs;
+        return this.nombreJoueurs;
     }
 
     public Pioche getPioche(){
-        return pioche;
+        return this.pioche;
     }
 
-    public Personnage getPersonnages(int i){
+    public Personnage getPersonnage(int i){
         if(0<=i && i<=8){
             return listePersonnages[i];
         } else {
@@ -43,12 +43,19 @@ public class PlateauDeJeu {
         }
     }
 
-    public void ajouterPersonnage(){
-        
+    public void ajouterPersonnage(Personnage personnage){
+        if(personnage != null && this.getNombrePersonnages() != this.listePersonnages.length){
+            this.listePersonnages[this.getNombrePersonnages()] = personnage;
+            personnage.setPlateau(this);
+            this.nombrePersonnages += 1;
+        }
     }
 
-    public void ajouterJoueur(){
-        
+    public void ajouterJoueur(Joueur joueur){
+        if(joueur != null && this.getNombreJoueurs() != this.listeJoueurs.length){
+            this.listeJoueurs[this.getNombreJoueurs()] = joueur;
+            this.nombreJoueurs += 1;
+        }
     }
 
 }
