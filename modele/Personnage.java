@@ -7,6 +7,7 @@ public abstract class Personnage{
     private Joueur joueur;
     private boolean assassine;
     private boolean vole;
+    private PlateauDeJeu plateau;
 
     public Personnage(String nom,int rang,String caracteristiques){
         joueur = null;
@@ -36,6 +37,14 @@ public abstract class Personnage{
 
     public boolean getVole(){
         return this.vole;
+    }
+
+    public PlateauDeJeu getPlateau(){
+        return this.plateau;
+    }
+
+    public void setPlateau(PlateauDeJeu plateau){
+        this.plateau = plateau;
     }
 
     public void setJoueur(Joueur j){

@@ -7,9 +7,9 @@ public class TestPioche {
 	public static void main(String[] args) {
 		TestPioche testPioche= new TestPioche();
 		testPioche.test1();
-		//testPioche.test2();
-		//testPioche.test3();
-		//testPioche.test4();
+		testPioche.test2();
+		testPioche.test3();
+		testPioche.test4();
 	}
 	
 	public void test1() {
