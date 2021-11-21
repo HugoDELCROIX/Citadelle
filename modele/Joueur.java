@@ -6,7 +6,7 @@ public class Joueur {
     private String nom;
     private int tresor;
     private int nbQuartiers;
-    private boolean possedeCouronne;
+    static boolean possedeCouronne;
     private Quartier[] cite;
     private ArrayList < Quartier > main;
 
