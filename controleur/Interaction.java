@@ -62,13 +62,15 @@ public class Interaction {
 	// renvoie une cha�ne de caract�re lue au clavier:
 	public static String lireUneChaine() {
 		String retour = "";
-		// ...
+        Scanner s = new Scanner(System.in);
+        retour = s.next();
 		return retour;
 	}
 
     public static void main(String[] args) {
         //System.out.println(lireUnEntier(1,4));
-        lireOuiOuNon();
+        //lireOuiOuNon();
+        //lireUneChaine();
     }
 	
 }
