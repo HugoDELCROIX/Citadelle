@@ -10,7 +10,7 @@ public class TestInteraction {
 		test.test2();
 		test.test3();
 		test.test4();
-	}	
+	}
 	
 	public void test1(){
 		System.out.println("TEST POUR LIRE UN ENTIER");
