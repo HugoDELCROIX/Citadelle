@@ -31,6 +31,7 @@ public class Interaction {
             System.out.println("Entier non compris entre "+borneMin+" et "+borneMax);
             i = s.nextInt();
         } 
+        s.close();
         return i;
 	}
 
@@ -55,6 +56,7 @@ public class Interaction {
         } else {
             retour = false;
         }
+        s.close();
         return retour;
         
 	}
@@ -64,6 +66,7 @@ public class Interaction {
 		String retour = "";
         Scanner s = new Scanner(System.in);
         retour = s.next();
+        s.close();
 		return retour;
 	}
 
