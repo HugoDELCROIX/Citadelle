@@ -7,7 +7,7 @@ public class Joueur {
     private int tresor;
     private int nbQuartiers;
     private boolean possedeCouronne;
-    private Quartier[] cite;
+    protected Quartier[] cite;
     private ArrayList < Quartier > main;
     protected Personnage monPersonnage=null;
 
@@ -104,8 +104,8 @@ public class Joueur {
         return quartSupprime;
     }
 
-    public void ajouterQuartierDansMain(Quartier nom){
-        main.add(nom);
+    public void ajouterQuartierDansMain(Quartier quartier){
+        main.add(quartier);
     }
 
     public Quartier retirerQuartierDansMain(){
