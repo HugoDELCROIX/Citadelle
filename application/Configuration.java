@@ -1,10 +1,22 @@
 package application;
 
+import modele.Architecte;
+import modele.Assassin;
+import modele.Caracteristiques;
+import modele.Condottiere;
+import modele.Eveque;
+import modele.Joueur;
+import modele.Magicienne;
+import modele.Marchande;
+import modele.Personnage;
 import modele.Pioche;
+import modele.PlateauDeJeu;
 import modele.Quartier;
+import modele.Roi;
+import modele.Voleur;
 
 public class Configuration {
-
+    //Déclaration des Quartiers
     //Type : RELIGIEUX
     private static Quartier temple = new Quartier("temple",Quartier.TYPE_QUARTIERS[0],1);
     private static Quartier eglise = new Quartier("église",Quartier.TYPE_QUARTIERS[0],2);
@@ -27,9 +39,41 @@ public class Configuration {
     private static Quartier port = new Quartier("port",Quartier.TYPE_QUARTIERS[3],4);
     private static Quartier hotel_ville = new Quartier("hôtel de ville",Quartier.TYPE_QUARTIERS[3],5);
 
+    //Déclaration des Merveilles
+    private static Quartier bibliotheque = new Quartier("Bibliothèque",Quartier.TYPE_QUARTIERS[4],6);
+    private static Quartier forge = new Quartier("Forge",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier carriere = new Quartier("Carrière",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier laboratoire = new Quartier("Laboratoire",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier cour_miracle = new Quartier("Cour des Miracles",Quartier.TYPE_QUARTIERS[4],2);
+    private static Quartier manufacture = new Quartier("Manufacture",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier donjon = new Quartier("Donjon",Quartier.TYPE_QUARTIERS[4],3);
+    private static Quartier salle_cartes = new Quartier("Salle des Cartes",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier dracoport = new Quartier("Dracoport",Quartier.TYPE_QUARTIERS[4],6);
+    private static Quartier statue_equestre = new Quartier("Statue Équestre",Quartier.TYPE_QUARTIERS[4],3);
+    private static Quartier ecole_magie = new Quartier("École de Magie",Quartier.TYPE_QUARTIERS[4],6);
+    private static Quartier tresor_imperial = new Quartier("Trésor Impérial",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier fontaine_souhaits = new Quartier("Fontaine aux Souhaits",Quartier.TYPE_QUARTIERS[4],5);
+    private static Quartier tripot = new Quartier("Tripot",Quartier.TYPE_QUARTIERS[4],6);
+
+    //Déclaration des Personnages
+    private static Personnage assassin = new Assassin();
+    private static Personnage architecte = new Architecte();
+    private static Personnage condotierre = new Condottiere();
+    private static Personnage eveque = new Eveque();
+    private static Personnage magicienne = new Magicienne();
+    private static Personnage marchande = new Marchande();
+    private static Personnage roi = new Roi();
+    private static Personnage voleur = new Voleur();
+
+    //Déclaration des Joueurs
+    private static Joueur j1 = new Joueur("Joueur 1");
+    private static Joueur j2 = new Joueur("Joueur 2");
+    private static Joueur j3 = new Joueur("Joueur 3");
+    private static Joueur j4 = new Joueur("Joueur 4");
+
     public static Pioche nouvellePioche(Pioche pioche){
-        
-        //Ajout des Quartiers en fonctions de leur quantité
+
+        //Ajout des Quartiers en fonctions de leur quantité à la pioche
         for(int i = 0;i<2;i++){
             pioche.ajouter(cathedrale);
             pioche.ajouter(forteresse);
@@ -56,13 +100,46 @@ public class Configuration {
             pioche.ajouter(manoir);
         }
 
-        pioche = new Pioche();
+        pioche.melanger();
 
         return pioche;
     } 
     
 
-    public static void configurationDeBase(Pioche p){
-        
+    public static Pioche configurationDeBase(Pioche pioche){
+        PlateauDeJeu plateau = new PlateauDeJeu();
+        //Ajout des Personnages au plateau de jeu
+        plateau.ajouterPersonnage(architecte);
+        plateau.ajouterPersonnage(assassin);
+        plateau.ajouterPersonnage(condotierre);
+        plateau.ajouterPersonnage(eveque);
+        plateau.ajouterPersonnage(magicienne);
+        plateau.ajouterPersonnage(roi);
+        plateau.ajouterPersonnage(voleur);
+        //Ajout des Joueurs au plateau de jeu
+        plateau.ajouterJoueur(j1);
+        plateau.ajouterJoueur(j2);
+        plateau.ajouterJoueur(j3);
+        plateau.ajouterJoueur(j4);
+
+        //Ajout des Merveilles à la pioche
+        pioche.ajouter(bibliotheque);
+        pioche.ajouter(forge);
+        pioche.ajouter(carriere);
+        pioche.ajouter(laboratoire);
+        pioche.ajouter(cour_miracle);
+        pioche.ajouter(manufacture);
+        pioche.ajouter(donjon);
+        pioche.ajouter(salle_cartes);
+        pioche.ajouter(dracoport);
+        pioche.ajouter(statue_equestre);
+        pioche.ajouter(ecole_magie);
+        pioche.ajouter(tresor_imperial);
+        pioche.ajouter(fontaine_souhaits);
+        pioche.ajouter(tripot);
+
+        pioche.melanger();
+
+        return pioche;
     }
 }
