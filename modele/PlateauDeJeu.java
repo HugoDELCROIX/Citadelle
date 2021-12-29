@@ -1,7 +1,7 @@
 package modele;
 
 public class PlateauDeJeu {
-    private Personnage[] listePersonnages;
+    protected Personnage[] listePersonnages;
     private Joueur[] listeJoueurs;
     private Pioche pioche;
     private int nombrePersonnages;
