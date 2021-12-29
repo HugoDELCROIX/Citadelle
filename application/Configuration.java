@@ -2,7 +2,6 @@ package application;
 
 import modele.Architecte;
 import modele.Assassin;
-import modele.Caracteristiques;
 import modele.Condottiere;
 import modele.Eveque;
 import modele.Joueur;
@@ -114,6 +113,7 @@ public class Configuration {
         plateau.ajouterPersonnage(condotierre);
         plateau.ajouterPersonnage(eveque);
         plateau.ajouterPersonnage(magicienne);
+        plateau.ajouterPersonnage(marchande);
         plateau.ajouterPersonnage(roi);
         plateau.ajouterPersonnage(voleur);
         //Ajout des Joueurs au plateau de jeu
