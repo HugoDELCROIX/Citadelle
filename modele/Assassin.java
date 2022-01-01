@@ -31,4 +31,9 @@ public class Assassin extends Personnage{
 		while(continu);
 	}
 
+
+	public void utiliserPouvoirAvatar() {
+		
+	}
+
 }

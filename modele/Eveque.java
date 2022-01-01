@@ -22,4 +22,9 @@ public class Eveque extends Personnage{
     }
 
 
+    public void utiliserPouvoirAvatar() {
+
+    }
+
+
 }

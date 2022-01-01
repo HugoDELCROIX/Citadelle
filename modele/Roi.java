@@ -29,4 +29,8 @@ public class Roi extends Personnage {
         }
     }
 
+    public void utiliserPouvoirAvatar() {
+
+    }
+
 }

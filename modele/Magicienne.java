@@ -91,6 +91,10 @@ public class Magicienne extends Personnage{
 			}
 		}
 	}
+
+	public void utiliserPouvoirAvatar() {
+	
+	}
 }
 		
 

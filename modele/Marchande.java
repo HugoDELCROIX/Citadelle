@@ -26,6 +26,10 @@ public class Marchande extends Personnage {
             }
         }
 	}
+
+    public void utiliserPouvoirAvatar() {
+
+    }
 }
 	
 

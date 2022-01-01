@@ -54,4 +54,8 @@ public class Voleur extends Personnage {
 			}
 		} while(continu);	
 	}
+
+	public void utiliserPouvoirAvatar() {
+
+	}
 }
