@@ -12,4 +12,7 @@ public class Architecte extends Personnage{
         }
     }
     
+    public void utiliserPouvoirAvatar(){
+        
+    }
 }

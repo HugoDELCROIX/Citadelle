@@ -1,6 +1,7 @@
 package modele.test;
 
 import modele.Quartier;
+import modele.test.test_perso.Test;
 import modele.Joueur;
 
 public class TestJoueur {

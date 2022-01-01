@@ -1,7 +1,7 @@
 package Test;
 
 import controleur.Interaction;
-import modele.test.Test;
+import modele.test.test_perso.Test;
 
 public class TestInteraction {
 	public static void main(String[] args){

@@ -1,4 +1,4 @@
-package modele.test;
+package modele.test.test_perso;
 
 import modele.Caracteristiques;
 import modele.Architecte;

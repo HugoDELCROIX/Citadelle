@@ -98,4 +98,6 @@ public abstract class Personnage {
         this.assassine = false;
         
     }
+
+    public abstract void utiliserPouvoirAvatar();
 }

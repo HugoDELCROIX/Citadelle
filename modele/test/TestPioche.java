@@ -2,6 +2,7 @@ package modele.test;
 
 import modele.Pioche;
 import modele.Quartier;
+import modele.test.test_perso.Test;
 
 public class TestPioche {
 	public static void main(String[] args) {

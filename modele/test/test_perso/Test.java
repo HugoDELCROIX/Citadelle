@@ -1,4 +1,4 @@
-package modele.test;
+package modele.test.test_perso;
 
 public class Test {
 	public static void test(boolean passed, String message) {
