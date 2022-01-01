@@ -71,7 +71,7 @@ public class Interaction {
 	}
 
     public static void main(String[] args) {
-        //System.out.println(lireUnEntier(1,4));
+        System.out.println(lireUnEntier(1,4));
         //lireOuiOuNon();
         //lireUneChaine();
     }
