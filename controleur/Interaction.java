@@ -23,17 +23,22 @@ public class Interaction {
 
 	// renvoie un entier lu au clavier compris dans l'intervalle
 	//     [borneMin, borneMax[
-        public static int lireUnEntier(int borneMin, int borneMax) {
+        public static int lireUnEntier(int borneMin,int borneMax) {
             int i = 0;
-            Scanner s = new Scanner(System.in);
-        i = s.nextInt();
-        while(i<borneMin || i>=borneMax){
-            System.out.println("Entier non compris entre "+borneMin+" et "+borneMax);
-            i = s.nextInt();
-        } 
-        s.close();
-        return i;
-	}
+            boolean continu = true;
+            do {
+                try {
+                    i = sc.nextInt();
+                    if(i>=borneMin && i<borneMax)
+                    continu = false;
+                } catch (InputMismatchException e) {
+                    continu = true;
+                    System.out.print("Veuillez rentrer un chiffre compris entre: " + borneMin + " et " + borneMax);
+                    sc.next(); // passe l'entier pour �viter de boucler
+                }
+            } while(continu);
+            return i;
+        }
 
 	// lit les r�ponses "oui", "non", "o" ou "n" et renvoie un bool�en
 	public static boolean lireOuiOuNon() {
@@ -41,14 +46,13 @@ public class Interaction {
         String valeur;
         boolean i = false;
 
-		Scanner s = new Scanner(System.in);
-        valeur = s.next();
+        valeur = sc.next();
         while(i==false){
             if("oui".equals(valeur)||"o".equals(valeur)||"non".equals(valeur)||"n".equals(valeur)){
                 i=true;
             }else{
             System.out.println("Veuillez entrer 'oui','o'/'non','n'");
-            valeur = s.next();
+            valeur = sc.next();
             }
         } 
         if("oui".equals(valeur)||"o".equals(valeur)){
@@ -56,7 +60,7 @@ public class Interaction {
         } else {
             retour = false;
         }
-        s.close();
+
         return retour;
         
 	}
@@ -64,9 +68,9 @@ public class Interaction {
 	// renvoie une cha�ne de caract�re lue au clavier:
 	public static String lireUneChaine() {
 		String retour = "";
-        Scanner s = new Scanner(System.in);
-        retour = s.next();
-        s.close();
+
+        retour = sc.next();
+
 		return retour;
 	}
 
