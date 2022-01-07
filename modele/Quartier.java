@@ -56,13 +56,6 @@ public class Quartier {
             }
         }
 
-        /*
-        for (int i = 0; i <= 4; i++) {
-            if (type == TYPES_QUARTIERS[i])
-                return type;
-        }
-        return type = "";
-        */
     }
 
     public int getCout() {

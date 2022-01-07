@@ -2,7 +2,7 @@ package application;
 
 import modele.Architecte;
 import modele.Assassin;
-import modele.Condottiere;
+import modele.Condottiere_thomas;
 import modele.Eveque;
 import modele.Joueur;
 import modele.Magicienne;
@@ -57,7 +57,7 @@ public class Configuration {
     //Déclaration des Personnages
     private static Personnage assassin = new Assassin();
     private static Personnage architecte = new Architecte();
-    private static Personnage condotierre = new Condottiere();
+    private static Personnage condotierre = new Condottiere_thomas();
     private static Personnage eveque = new Eveque();
     private static Personnage magicienne = new Magicienne();
     private static Personnage marchande = new Marchande();
