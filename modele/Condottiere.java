@@ -28,14 +28,14 @@ public class Condottiere extends Personnage{
         if(utiliserPouvoir = true){
             System.out.println("Voici la liste des joueurs et le contenu de leur cité :");
 
-            for(int i=0;i<getPlateau().getNombreJoueurs();i++){
+            for(int i=0;i<this.getPlateau().getNombreJoueurs();i++){
                 Joueur joueur = this.getPlateau().getJoueur(i);
-                System.out.println("\n"+(i+1)+joueur.getNom()+" : ");
+                System.out.println("\n"+(i+1)+" "+joueur.getNom()+" : ");
 
                 for(int j=0;j<joueur.nbQuartiersDansCite();j++){
                     Quartier quartier = this.joueur.getCite()[j];
-                    if(quartier!=null){
-                    System.out.println((j+1)+quartier.getNom()+"(coût "+quartier.getCout()+"), ");
+                    if(quartier instanceof Quartier){
+                        System.out.println((j+1)+" "+quartier.getNom()+" (coût "+quartier.getCout()+"), ");
                     }
                 }
             }
@@ -49,12 +49,31 @@ public class Condottiere extends Personnage{
 
             do{
                 if(listeJoueur==0){
-                    choixDuJoueur = true;
+                    choixDuJoueur = false;
                 } else {
                     if(joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine()==false){
-                        System.out.println("Impossible d'assassiner un Eveque vivant");
+                        System.out.println("Impossible de choisir un Eveque vivant");
                     } else {
                         choixDuJoueur = true;
+
+                        boolean choixDuQuartier = false;
+
+                        do{
+                            System.out.println("Quel quartier choisissez-vous ? ");
+                            int listeQuartiers = Interaction.lireUnEntier(1, (joueurChoisi.nbQuartiersDansCite()+1));
+
+                            Quartier quartierChoisi = joueurChoisi.getCite()[listeQuartiers-1];
+
+                            if(joueurChoisi.nbPieces() < (quartierChoisi.getCout()-1)){
+                                System.out.println("Votre trésor n’est pas suffisant");
+                            } else {
+                                choixDuQuartier = true;
+                                System.out.println(joueurChoisi.nbQuartiersDansCite());
+                                System.out.println("Vous avez démoli "+quartierChoisi.getNom()+" de la cité de "+joueurChoisi.getNom());
+                            }
+
+
+                        } while(choixDuQuartier = false);
                     }
                 }
             } while (choixDuJoueur = false);
