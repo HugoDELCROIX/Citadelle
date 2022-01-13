@@ -1,7 +1,6 @@
 package modele;
 
 import controleur.Interaction;
-import modele.Eveque;
 
 public class Condottiere extends Personnage{
 
@@ -33,7 +32,7 @@ public class Condottiere extends Personnage{
                 System.out.println("\n"+(i+1)+" "+joueur.getNom()+" : ");
 
                 for(int j=0;j<joueur.nbQuartiersDansCite();j++){
-                    Quartier quartier = this.joueur.getCite()[j];
+                    Quartier quartier = joueur.getCite()[j];
                     if(quartier instanceof Quartier){
                         System.out.println((j+1)+" "+quartier.getNom()+" (coût "+quartier.getCout()+"), ");
                     }
@@ -64,11 +63,12 @@ public class Condottiere extends Personnage{
 
                             Quartier quartierChoisi = joueurChoisi.getCite()[listeQuartiers-1];
 
-                            if(joueurChoisi.nbPieces() < (quartierChoisi.getCout()-1)){
+                            if(this.getJoueur().nbPieces() < (quartierChoisi.getCout()-1)){
                                 System.out.println("Votre trésor n’est pas suffisant");
                             } else {
                                 choixDuQuartier = true;
                                 System.out.println(joueurChoisi.nbQuartiersDansCite());
+                                joueurChoisi.retirerQuartierDansCite(quartierChoisi.getNom());
                                 System.out.println("Vous avez démoli "+quartierChoisi.getNom()+" de la cité de "+joueurChoisi.getNom());
                             }
 

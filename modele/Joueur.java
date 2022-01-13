@@ -94,13 +94,17 @@ public class Joueur {
 
     public Quartier retirerQuartierDansCite(String quartier) {
         Quartier quartSupprime = null;
-        for (int i = 0; i < nbQuartiers; i++) {
-            if (cite[i] != null && cite[i].getNom().equals(quartier)) {
-                quartSupprime = cite[i];
-                cite[i] = null;
-                nbQuartiers--;
+        for (int i = 1; i < this.cite.length; i++) {
+            if (this.cite[i-1] != null && this.cite[i-1].getNom().equals(quartier)) {
+                quartSupprime = this.cite[i-1];
+                this.cite[i-1] = null;
+            }
+            if(this.cite[i-1] == null){
+                this.cite[i-1] = this.cite[i];
+                this.cite[i] = null;
             }
         }
+        this.nbQuartiers--;
         return quartSupprime;
     }
 
