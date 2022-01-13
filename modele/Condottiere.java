@@ -25,7 +25,7 @@ public class Condottiere extends Personnage{
         System.out.println("Voulez-vous utiliser votre pouvoir de destruction ? (o/n)");
         boolean utiliserPouvoir = Interaction.lireOuiOuNon();
 
-        if(utiliserPouvoir = true){
+        if(utiliserPouvoir == true){
             System.out.println("Voici la liste des joueurs et le contenu de leur cité :");
 
             for(int i=0;i<this.getPlateau().getNombreJoueurs();i++){
@@ -45,7 +45,7 @@ public class Condottiere extends Personnage{
             System.out.println("Quel joueur choisissez-vous ? (0 pour ne rien faire)");
             int listeJoueur = Interaction.lireUnEntier(0, (getPlateau().getNombreJoueurs()+1));
             Joueur joueurChoisi = getPlateau().getJoueur(listeJoueur-1);
-            boolean choixDuJoueur;
+            boolean choixDuJoueur = false;
 
             do{
                 if(listeJoueur==0){
@@ -73,10 +73,10 @@ public class Condottiere extends Personnage{
                             }
 
 
-                        } while(choixDuQuartier = false);
+                        } while(choixDuQuartier == false);
                     }
                 }
-            } while (choixDuJoueur = false);
+            } while (choixDuJoueur == false);
         }
     }
 
