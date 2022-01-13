@@ -1,6 +1,7 @@
 package modele;
 
 import controleur.Interaction;
+import java.util.Random;
 
 public class Voleur extends Personnage{
 
@@ -40,8 +41,8 @@ public class Voleur extends Personnage{
 
     public void utiliserPouvoirAvatar() {
 
-        //int i;
-        //Personnage personnageChoisi = this.getPlateau().getPersonnage();
+        Random rand = new Random();
+        int i = rand.ints(0, 3).findFirst().getAsInt();
+        Personnage personnageChoisi = this.getPlateau().getPersonnage(i);
     }
-    
 }
