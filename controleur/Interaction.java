@@ -1,6 +1,7 @@
 package controleur;
 
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Interaction {
@@ -73,11 +74,5 @@ public class Interaction {
 
 		return retour;
 	}
-
-    public static void main(String[] args) {
-        System.out.println(lireUnEntier(1,4));
-        //lireOuiOuNon();
-        //lireUneChaine();
-    }
 	
 }
