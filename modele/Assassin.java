@@ -1,5 +1,7 @@
 package modele;
 
+import java.util.Random;
+
 import controleur.Interaction;
 
 public class Assassin extends Personnage{
@@ -10,7 +12,7 @@ public class Assassin extends Personnage{
 	}
 
 	public void utiliserPouvoir() {
-		Personnage[]listePersonnages = this.getPlateau().listePersonnages;
+		Personnage[] listePersonnages = this.getPlateau().listePersonnages;
 		System.out.println("Quel personnage voulez-vous assassiner ?");
 		for(int i=0;i<this.getPlateau().getNombrePersonnages();i++) {
 			
@@ -33,7 +35,20 @@ public class Assassin extends Personnage{
 
 
 	public void utiliserPouvoirAvatar() {
-		
+		Random rand = new Random();
+        int listeperso = rand.ints(0,getPlateau().getNombreJoueurs()+1).findFirst().getAsInt();
+        Personnage personnageChoisi = this.getPlateau().getPersonnage(listeperso-1);
+        boolean personnageAssa = false;
+
+		while(personnageChoisi.getNom().equals("Assassin")){
+			listeperso = rand.ints(0,getPlateau().getNombreJoueurs()+1).findFirst().getAsInt();
+        	personnageChoisi = this.getPlateau().getPersonnage(listeperso-1);
+		}
+
+		do{
+			personnageChoisi.setAssassine();
+			personnageAssa = true;
+		} while (personnageAssa==false);
 	}
 
 }
