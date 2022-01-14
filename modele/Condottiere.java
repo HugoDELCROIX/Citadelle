@@ -84,36 +84,29 @@ public class Condottiere extends Personnage{
 
     public void utiliserPouvoirAvatar() {
         Random ran = new Random();
-        System.out.println("C'est le tour de la condottiere");
-        //faire if pas assez de pièces
-        boolean utiliserPouvoir = ran.nextBoolean();
-        if(utiliserPouvoir == true){
         boolean choixDuJoueur = false;
-            do{
-            int listeJoueur = ran.nextInt(this.getPlateau().getNombreJoueurs());
-            Joueur joueurChoisi = getPlateau().getJoueur(listeJoueur);
-                if(joueurChoisi.nbQuartiersDansCite()==0){
-                    choixDuJoueur = false;
-                } else {
-                    if(joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine()==false){
-                        choixDuJoueur = false;
-                    } else {
 
-                            int listeQuartiers = ran.nextInt(joueurChoisi.nbQuartiersDansCite());
+        do{
+                int listeJoueur = ran.nextInt(this.getPlateau().getNombreJoueurs()+1);
+                Joueur joueurChoisi = getPlateau().getJoueur(listeJoueur-1);
 
-                            Quartier quartierChoisi = joueurChoisi.getCite()[listeQuartiers];
-
-                            if(this.getJoueur().nbPieces() < (quartierChoisi.getCout()-1)){
-                                choixDuJoueur = false;
-                            } else {
-                                choixDuJoueur = true;
-                                joueurChoisi.retirerQuartierDansCite(quartierChoisi.getNom());
-                                System.out.println("La condottiere a démoli "+quartierChoisi.getNom()+" de la cité de "+joueurChoisi.getNom());
-                            }
-                        }
+                while(joueurChoisi.nbQuartiersDansCite()==0||(joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine()==false)){
+                    listeJoueur = ran.nextInt(this.getPlateau().getNombreJoueurs()+1);
+                    joueurChoisi = getPlateau().getJoueur(listeJoueur-1);
                 }
+
+                int listeQuartiers = ran.nextInt(joueurChoisi.nbQuartiersDansCite());
+                Quartier quartierChoisi = joueurChoisi.getCite()[listeQuartiers];
+
+                while(this.getJoueur().nbPieces() < (quartierChoisi.getCout()-1)){
+                    listeQuartiers = ran.nextInt(joueurChoisi.nbQuartiersDansCite());
+                    quartierChoisi = joueurChoisi.getCite()[listeQuartiers];
+                }
+
+                joueurChoisi.retirerQuartierDansCite(quartierChoisi.getNom());
+                System.out.println("La condottiere a démoli "+quartierChoisi.getNom()+" de la cité de "+joueurChoisi.getNom());
+                choixDuJoueur = true;
+                
             } while (choixDuJoueur == false);
-        }
-        System.out.println("Fin du tour de la condottiere");
     }
 }
