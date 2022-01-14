@@ -1,11 +1,5 @@
 package modele;
 
-/**
- * 
- * @author DEIRI Sana 10/12/2021
- *
- */
-
 public class Marchande extends Personnage {
 	public Marchande() {
 		super("Marchande",6,Caracteristiques.MARCHANDE);
