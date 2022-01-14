@@ -42,7 +42,22 @@ public class Voleur extends Personnage{
     public void utiliserPouvoirAvatar() {
 
         Random rand = new Random();
-        int i = rand.ints(0, 3).findFirst().getAsInt();
-        Personnage personnageChoisi = this.getPlateau().getPersonnage(i);
+        int listeperso = rand.ints(0,getPlateau().getNombreJoueurs()+1).findFirst().getAsInt();
+        Personnage personnageChoisi = this.getPlateau().getPersonnage(listeperso-1);
+        boolean personnageVole = false;
+
+        while(personnageChoisi.getRang()==1||personnageChoisi.getNom().equals("Voleur")){
+            listeperso = rand.ints(0,getPlateau().getNombreJoueurs()+1).findFirst().getAsInt();
+            personnageChoisi = this.getPlateau().getPersonnage(listeperso-1);
+        }
+
+        do{
+            if(personnageChoisi.getJoueur().equals(null)){
+                personnageVole = true;
+            } else {
+                personnageChoisi.setVole();
+                personnageVole = true;
+            }
+        } while (personnageVole == false);
     }
 }
