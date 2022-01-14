@@ -13,7 +13,7 @@ public class Marchande extends Personnage {
 	
 	
 	public void utiliserPouvoir() {  
-        joueur.ajouterPieces(1);
+        this.joueur.ajouterPieces(1);
     }
 	
 	public void percevoirRessourcesSpecifiques() {
@@ -28,7 +28,7 @@ public class Marchande extends Personnage {
 	}
 
     public void utiliserPouvoirAvatar() {
-
+        this.joueur.ajouterPieces(1);
     }
 }
 	
