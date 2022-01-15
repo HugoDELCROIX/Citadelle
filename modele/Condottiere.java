@@ -83,23 +83,23 @@ public class Condottiere extends Personnage {
     }
 
     public void utiliserPouvoirAvatar() {
-        Random ran = new Random();
+        Random rand = new Random();
         boolean choixDuJoueur = false;
 
         do {
-            int listeJoueur = ran.nextInt(this.getPlateau().getNombreJoueurs() + 1);
+            int listeJoueur = rand.nextInt(this.getPlateau().getNombreJoueurs() + 1);
             Joueur joueurChoisi = getPlateau().getJoueur(listeJoueur - 1);
 
             while (joueurChoisi.nbQuartiersDansCite() == 0 || (joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine() == false)) {
-                listeJoueur = ran.nextInt(this.getPlateau().getNombreJoueurs() + 1);
+                listeJoueur = rand.nextInt(this.getPlateau().getNombreJoueurs() + 1);
                 joueurChoisi = getPlateau().getJoueur(listeJoueur - 1);
             }
 
-            int listeQuartiers = ran.nextInt(joueurChoisi.nbQuartiersDansCite());
+            int listeQuartiers = rand.nextInt(joueurChoisi.nbQuartiersDansCite());
             Quartier quartierChoisi = joueurChoisi.getCite()[listeQuartiers];
 
             while (this.getJoueur().nbPieces() < (quartierChoisi.getCout() - 1)) {
-                listeQuartiers = ran.nextInt(joueurChoisi.nbQuartiersDansCite());
+                listeQuartiers = rand.nextInt(joueurChoisi.nbQuartiersDansCite());
                 quartierChoisi = joueurChoisi.getCite()[listeQuartiers];
             }
 

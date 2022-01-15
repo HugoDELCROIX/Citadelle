@@ -35,25 +35,9 @@ public class Jeu {
 		} while (response != 3);
 		quitter();
 	}
-
-	private void afficherBienvenue() {
-		System.out.println("Bienvenue dans le jeu Citadelles");
-	}
-
-	private void afficherMenu() {
-		System.out.println("Veuillez entrer le chiffre correspondant à  votre choix!!!");
-		System.out.println("	1 : 	Jouer une nouvelle partie. ");
-		System.out.println("	2 : 	Afficher les règles du jeu. ");
-		System.out.println("	3 : 	Quitter l'application. ");
-	}
-
+	
 	private void afficherLesRegles() {
-
-	}
-
-	private void quitter() {
-		System.out.println("Au revoir et à  très bientôt !!!");
-		System.exit(0);
+		System.out.println("Regles");
 	}
 
 	private void jouerPartie() {
@@ -72,7 +56,7 @@ public class Jeu {
 		//on ajoute deux pièces à  tous les joueurs
 		for (int i = 0; i < this.plateauDeJeu.getNombreJoueurs(); i++) {
 			this.plateauDeJeu.getJoueur(i).ajouterPieces(2);
-			for (int j = 0; j < 4; j++) {
+			for (int j = 0; j < this.plateauDeJeu.getNombreJoueurs(); j++) {
 				//on ajoute à  la main de chaque joueur un quatier qu'il a pioché dans la pioche
 				this.plateauDeJeu.getJoueur(i).ajouterQuartierDansMain(this.plateauDeJeu.getPioche().piocher());
 			}
@@ -190,7 +174,7 @@ public class Jeu {
 							boolean peutConstruire = false;
 							int carte = 0;
 							do {
-								System.out.println("Quel cartier voulez vous construire ?");
+								System.out.println("Quel quartier voulez vous construire ?");
 								int i = 1;
 								//on affiche la main du joueur
 								for (Quartier quartier: this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain()) {
@@ -379,4 +363,19 @@ public class Jeu {
 		System.out.println("Félicitation " + this.plateauDeJeu.getJoueur(joueurMax).getNom() + "!!!");
 	}
 
+	private void afficherBienvenue() {
+		System.out.println("Bienvenue dans le jeu Citadelles");
+	}
+
+	private void afficherMenu() {
+		System.out.println("Veuillez entrer le chiffre correspondant à  votre choix !");
+		System.out.println("	1 : 	Jouer une nouvelle partie. ");
+		System.out.println("	2 : 	Afficher les règles du jeu. ");
+		System.out.println("	3 : 	Quitter l'application. ");
+	}
+
+	private void quitter() {
+		System.out.println("Au revoir et a très bientôt !");
+		System.exit(0);
+	}
 }
