@@ -17,42 +17,42 @@ import modele.Voleur;
 public class Configuration {
     //Déclaration des Quartiers
     //Type : RELIGIEUX
-    private static Quartier temple = new Quartier("temple",Quartier.TYPE_QUARTIERS[0],1);
-    private static Quartier eglise = new Quartier("église",Quartier.TYPE_QUARTIERS[0],2);
-    private static Quartier monastere = new Quartier("monastère",Quartier.TYPE_QUARTIERS[0],3);
-    private static Quartier cathedrale = new Quartier("cathédrale",Quartier.TYPE_QUARTIERS[0],5);
+    private static Quartier temple = new Quartier("temple", Quartier.TYPE_QUARTIERS[0], 1);
+    private static Quartier eglise = new Quartier("église", Quartier.TYPE_QUARTIERS[0], 2);
+    private static Quartier monastere = new Quartier("monastère", Quartier.TYPE_QUARTIERS[0], 3);
+    private static Quartier cathedrale = new Quartier("cathédrale", Quartier.TYPE_QUARTIERS[0], 5);
     //Type : MILITAIRE
-    private static Quartier tour_guet = new Quartier("tour de guet",Quartier.TYPE_QUARTIERS[1],1);
-    private static Quartier prison = new Quartier("prison",Quartier.TYPE_QUARTIERS[1],2);
-    private static Quartier caserne = new Quartier("caserne",Quartier.TYPE_QUARTIERS[1],3);
-    private static Quartier forteresse = new Quartier("forteresse",Quartier.TYPE_QUARTIERS[1],5);
+    private static Quartier tour_guet = new Quartier("tour de guet", Quartier.TYPE_QUARTIERS[1], 1);
+    private static Quartier prison = new Quartier("prison", Quartier.TYPE_QUARTIERS[1], 2);
+    private static Quartier caserne = new Quartier("caserne", Quartier.TYPE_QUARTIERS[1], 3);
+    private static Quartier forteresse = new Quartier("forteresse", Quartier.TYPE_QUARTIERS[1], 5);
     //Type : NOBLE
-    private static Quartier manoir = new Quartier("manoir",Quartier.TYPE_QUARTIERS[2],3);
-    private static Quartier chateau = new Quartier("château",Quartier.TYPE_QUARTIERS[2],4);
-    private static Quartier palais = new Quartier("palais",Quartier.TYPE_QUARTIERS[2],5);
+    private static Quartier manoir = new Quartier("manoir", Quartier.TYPE_QUARTIERS[2], 3);
+    private static Quartier chateau = new Quartier("château", Quartier.TYPE_QUARTIERS[2], 4);
+    private static Quartier palais = new Quartier("palais", Quartier.TYPE_QUARTIERS[2], 5);
     //Type : COMMERCANT
-    private static Quartier taverne = new Quartier("tarvene",Quartier.TYPE_QUARTIERS[3],1);
-    private static Quartier echope = new Quartier("échoppe",Quartier.TYPE_QUARTIERS[3],2);
-    private static Quartier marche = new Quartier("marché",Quartier.TYPE_QUARTIERS[3],2);
-    private static Quartier comptoir = new Quartier("comptoir",Quartier.TYPE_QUARTIERS[3],3);
-    private static Quartier port = new Quartier("port",Quartier.TYPE_QUARTIERS[3],4);
-    private static Quartier hotel_ville = new Quartier("hôtel de ville",Quartier.TYPE_QUARTIERS[3],5);
+    private static Quartier taverne = new Quartier("tarvene", Quartier.TYPE_QUARTIERS[3], 1);
+    private static Quartier echope = new Quartier("échoppe", Quartier.TYPE_QUARTIERS[3], 2);
+    private static Quartier marche = new Quartier("marché", Quartier.TYPE_QUARTIERS[3], 2);
+    private static Quartier comptoir = new Quartier("comptoir", Quartier.TYPE_QUARTIERS[3], 3);
+    private static Quartier port = new Quartier("port", Quartier.TYPE_QUARTIERS[3], 4);
+    private static Quartier hotel_ville = new Quartier("hôtel de ville", Quartier.TYPE_QUARTIERS[3], 5);
 
     //Déclaration des Merveilles
-    private static Quartier bibliotheque = new Quartier("Bibliothèque",Quartier.TYPE_QUARTIERS[4],6);
-    private static Quartier forge = new Quartier("Forge",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier carriere = new Quartier("Carrière",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier laboratoire = new Quartier("Laboratoire",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier cour_miracle = new Quartier("Cour des Miracles",Quartier.TYPE_QUARTIERS[4],2);
-    private static Quartier manufacture = new Quartier("Manufacture",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier donjon = new Quartier("Donjon",Quartier.TYPE_QUARTIERS[4],3);
-    private static Quartier salle_cartes = new Quartier("Salle des Cartes",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier dracoport = new Quartier("Dracoport",Quartier.TYPE_QUARTIERS[4],6);
-    private static Quartier statue_equestre = new Quartier("Statue Équestre",Quartier.TYPE_QUARTIERS[4],3);
-    private static Quartier ecole_magie = new Quartier("École de Magie",Quartier.TYPE_QUARTIERS[4],6);
-    private static Quartier tresor_imperial = new Quartier("Trésor Impérial",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier fontaine_souhaits = new Quartier("Fontaine aux Souhaits",Quartier.TYPE_QUARTIERS[4],5);
-    private static Quartier tripot = new Quartier("Tripot",Quartier.TYPE_QUARTIERS[4],6);
+    private static Quartier bibliotheque = new Quartier("Bibliothèque", Quartier.TYPE_QUARTIERS[4], 6);
+    private static Quartier forge = new Quartier("Forge", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier carriere = new Quartier("Carrière", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier laboratoire = new Quartier("Laboratoire", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier cour_miracle = new Quartier("Cour des Miracles", Quartier.TYPE_QUARTIERS[4], 2);
+    private static Quartier manufacture = new Quartier("Manufacture", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier donjon = new Quartier("Donjon", Quartier.TYPE_QUARTIERS[4], 3);
+    private static Quartier salle_cartes = new Quartier("Salle des Cartes", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier dracoport = new Quartier("Dracoport", Quartier.TYPE_QUARTIERS[4], 6);
+    private static Quartier statue_equestre = new Quartier("Statue Équestre", Quartier.TYPE_QUARTIERS[4], 3);
+    private static Quartier ecole_magie = new Quartier("École de Magie", Quartier.TYPE_QUARTIERS[4], 6);
+    private static Quartier tresor_imperial = new Quartier("Trésor Impérial", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier fontaine_souhaits = new Quartier("Fontaine aux Souhaits", Quartier.TYPE_QUARTIERS[4], 5);
+    private static Quartier tripot = new Quartier("Tripot", Quartier.TYPE_QUARTIERS[4], 6);
 
     //Déclaration des Personnages
     private static Personnage assassin = new Assassin();
@@ -70,17 +70,15 @@ public class Configuration {
     private static Joueur j3 = new Joueur("Joueur 3");
     private static Joueur j4 = new Joueur("Joueur 4");
 
-    public static Pioche nouvellePioche(){
-
+    public static Pioche nouvellePioche() {
         Pioche pioche = new Pioche();
-
         //Ajout des Quartiers en fonction de leur quantité à la pioche
-        for(int i = 0;i<2;i++){
+        for (int i = 0; i < 2; i++) {
             pioche.ajouter(cathedrale);
             pioche.ajouter(forteresse);
             pioche.ajouter(hotel_ville);
         }
-        for(int i = 0;i<3;i++){
+        for (int i = 0; i < 3; i++) {
             pioche.ajouter(monastere);
             pioche.ajouter(eglise);
             pioche.ajouter(temple);
@@ -92,11 +90,11 @@ public class Configuration {
             pioche.ajouter(comptoir);
             pioche.ajouter(port);
         }
-        for(int i = 0;i<4;i++){
+        for (int i = 0; i < 4; i++) {
             pioche.ajouter(marche);
             pioche.ajouter(chateau);
         }
-        for(int i = 0;i<5;i++){
+        for (int i = 0; i < 5; i++) {
             pioche.ajouter(taverne);
             pioche.ajouter(manoir);
         }
@@ -104,10 +102,10 @@ public class Configuration {
         pioche.melanger();
 
         return pioche;
-    } 
-    
+    }
 
-    public static PlateauDeJeu configurationDeBase(Pioche pioche){
+
+    public static PlateauDeJeu configurationDeBase(Pioche pioche) {
         PlateauDeJeu plateau = new PlateauDeJeu();
         //Ajout des Personnages au plateau de jeu
         plateau.ajouterPersonnage(architecte);
