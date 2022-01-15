@@ -1,130 +1,202 @@
 package modele;
+
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class Joueur {
-    private String nom;
-    private int tresor;
-    private int nbQuartiers;
-    private boolean possedeCouronne;
-    protected Quartier[] cite;
-    private ArrayList < Quartier > main;
-    protected Personnage monPersonnage = null;
+	private String nom;
+	private int tresor;
+    private Quartier cite[];
+    private ArrayList<Quartier> main = new ArrayList<>();
+	private int nbQuartier;
+	private boolean possedeCouronne;
+	protected Personnage monPersonnage;
+	private boolean simule;
+	private boolean premier;
+	private boolean rangPlusEleve;
 
-    public Joueur(String nom) { //Constructeur
-        this.nom = nom;
-        this.tresor = 0;
-        this.nbQuartiers = 0;
-        this.possedeCouronne = false;
-        this.cite = new Quartier[8];
-        this.main = new ArrayList < Quartier > ();
-    }
+	/**
+	 * @param nom
+	 */
+	public Joueur(String nom) {
+		// TODO Auto-generated constructor stub
+		this.nom = nom;
+		this.tresor = 0;
+		this.nbQuartier = 0;
+		this.possedeCouronne = false;
+		this.cite = new Quartier[8];
+	    this.main = new ArrayList<Quartier>();
+	    this.monPersonnage = null;
+	    this.simule = false;
+	    this.premier = false;
+	    this.rangPlusEleve = false;
+	    
+	}
+	
+	public String getNom() {
+		return nom;
+	}
+	
+	/**
+	 * @return the monPersonnage
+	 */
+	public Personnage getPersonnage() {
+		return monPersonnage;
+	}
 
-    public Personnage getPersonnage() { //Retourne le personnage choisi par le joueur
-        return this.monPersonnage;
-    }
+	public int nbPieces() {
+		return tresor;
+	}
+	
+	public int nbQuartiersDansCite() {
+		return nbQuartier;
+	}
+	
+	public Quartier[] getCite() {
 
-    public String getNom() { //Retourne le nom du joueur
-        return this.nom;
-    }
+		return cite;
+	}
+	
+	public ArrayList<Quartier> getMain() {
+		return main;
+	}
+	
+	public int nbQuartiersDansMain() {
+			
+		return main.size();
 
-    public int nbPieces() { //Retourne le trésor du joueur
-        return this.tresor;
-    }
+	}
+	
+	/**
+	 * @return the rangPlusEleve
+	 */
+	public boolean isRangPlusEleve() {
+		return rangPlusEleve;
+	}
 
-    public int nbQuartiersDansCite() { //Retourne le nombre de quartiers dans la cité du joueur
-        return this.nbQuartiers;
-    }
+	/**
+	 * @param rangPlusEleve the rangPlusEleve to set
+	 */
+	public void setRangPlusEleve() {
+		this.rangPlusEleve = true;
+	}
 
-    public Quartier[] getCite() { //Retourne la cité du joueur
-        return this.cite;
-    }
+	/**
+	 * @return the simule
+	 */
+	public boolean isSimule() {
+		return simule;
+	}
 
-    public ArrayList < Quartier > getMain() { //Retourne la main du joueur
-        return this.main;
-    }
+	/**
+	 * @param simule the simule to set
+	 */
+	public void setSimule(boolean simule) {
+		this.simule = simule;
+	}
 
-    public int nbQuartiersDansMain() { //Retourne du nombre de quartiers dans la main du joueur
-        return this.main.size();
-    }
+	/**
+	 * @return the premier
+	 */
+	public boolean isPremier() {
+		return premier;
+	}
 
-    public boolean getPossedeCouronne() { //Retourne si le joueur posséde la couronne
-        return this.possedeCouronne;
-    }
+	/**
+	 * @param premier the premier to set
+	 */
+	public void setPremier(boolean premier) {
+		this.premier = premier;
+	}
 
-    public void setPossedeCouronne(boolean b) { //Défini si le joueur posséde la couronne
-        this.possedeCouronne = b;
-    }
+	public Boolean getPossedeCouronne() {
+		return possedeCouronne;
+	}
+	
+	public void setPossedeCouronne(boolean b) {
+		this.possedeCouronne = b;
+	}
+	
+	public void ajouterPieces(int nbPieces ) {
+		if(nbPieces >= 0) {
+			tresor = tresor + nbPieces;
+		}
+	}
+	
+	public void retirerPieces(int nbPieces) {
+		
+		if (nbPieces > 0) {
+			
+		if ( (tresor - nbPieces) >= 0) {
+			
+			tresor = tresor - nbPieces;
+		}
+	}
+		
+	}
+	
+	public void ajouterQuartierDansCite(Quartier quartier) {
+		
+		if (nbQuartier < 8) {
+			this.cite[nbQuartier] = quartier;
+			nbQuartier++;
+		}
+		
+	}
+	
+	public boolean quartierPresentDansCite(String nom) {
+		for (int i=0; i< nbQuartier - 1; i++) {
+			
+			if (cite[i].getNom().equals(nom)) {
+				
+			    return true;
+				
+			}
+		}
+		return false;
+		
+	}
+	
+	public Quartier retirerQuartierDansCite(String nom) {
+		
+		Quartier quartSupprime = null;
+		
+		for (int i=0; i< nbQuartier; i++) {
+			if (cite[i].getNom().equals(nom)) {
+				quartSupprime = cite[i];
+				cite[i] = null;
+				nbQuartier--;
+			}
+		}
+		return quartSupprime;
+		
+	}
+	
+	public void ajouterQuartierDansMain(Quartier quartier) {
+		
+		main.add(quartier);
+		
+	}
+	
+	public Quartier retirerQuartierDansMain() {
+		
+		if (main.size() != 0) {
+			
+			Random generateur = new Random();
+			int numeroHasard = generateur.nextInt(this.nbQuartiersDansMain());
+			return main.remove(numeroHasard);
+			
+		}
+		return null;
 
-    public void ajouterPieces(int piece) { //Ajouter des pièces au trésor du joueur
-        if (piece > 0) {
-            tresor = tresor + piece;
-        } else {
-            System.out.println("Le nombre de pieces ne peut pas etre negatif");
-        }
-    }
-
-    public void retirerPieces(int piece) { //Retirer des pièces au trésor du joueur
-        if (piece <= tresor) {
-            if (piece > 0) {
-                tresor = tresor - piece;
-            } else {
-                System.out.println("Le nombre de pieces ne peut pas etre negatif");
-            }
-        } else {
-            System.out.println("Vous ne pouvez pas retirer plus de pièces que le trésor");
-        }
-    }
-
-    public void ajouterQuartierDansCite(Quartier quartier) { //Ajouter un quartier dans la cité du joueur
-        if (nbQuartiers < 8) {
-            cite[nbQuartiers] = quartier;
-            nbQuartiers++;
-        }
-    }
-
-    public boolean quartierPresentDansCite(String quartier) { //Retourne si un quartier est présent dans la cité du joueur
-        for (int i = 0; i < nbQuartiers; i++) {
-            if (cite[i] != null && cite[i].getNom().equals(quartier)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public Quartier retirerQuartierDansCite(String quartier) { //Retirer un quartier de la cité du joueur
-        Quartier quartSupprime = null;
-        for (int i = 1; i < this.cite.length; i++) {
-            if (this.cite[i - 1] != null && this.cite[i - 1].getNom().equals(quartier)) {
-                quartSupprime = this.cite[i - 1];
-                this.cite[i - 1] = null;
-            }
-            if (this.cite[i - 1] == null) {
-                this.cite[i - 1] = this.cite[i];
-                this.cite[i] = null;
-            }
-        }
-        this.nbQuartiers--;
-        return quartSupprime;
-    }
-
-    public void ajouterQuartierDansMain(Quartier quartier) { //Ajouter un quartier dans la main du joueur
-        main.add(quartier);
-    }
-
-    public Quartier retirerQuartierDansMain() { //Retirer un quartier de la main du joueur
-        Random generateur = new Random();
-        int numeroHasard = generateur.nextInt(this.nbQuartiersDansMain());
-        Quartier retour = main.get(numeroHasard);
-        main.remove(numeroHasard);
-        return retour;
-    }
-
-    public void reinitialiser() { //Reinitialiser les données du joueur 
-        this.tresor = 0;
-        this.main = new ArrayList < Quartier > ();
-        this.cite = new Quartier[8];
-        this.nbQuartiers = 0;
-    }
+	}
+	
+	public void reinitialiser() {
+		this.tresor = 0;
+		this.cite = new Quartier[8];
+	    this.main = new ArrayList<Quartier>();
+	    this.nbQuartier = 0;
+	}	
 
 }

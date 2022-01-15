@@ -70,7 +70,9 @@ public class Configuration {
     private static Joueur j3 = new Joueur("Joueur 3");
     private static Joueur j4 = new Joueur("Joueur 4");
 
-    public static Pioche nouvellePioche(Pioche pioche){
+    public static Pioche nouvellePioche(){
+
+        Pioche pioche = new Pioche();
 
         //Ajout des Quartiers en fonction de leur quantité à la pioche
         for(int i = 0;i<2;i++){
@@ -105,7 +107,7 @@ public class Configuration {
     } 
     
 
-    public static Pioche configurationDeBase(Pioche pioche){
+    public static PlateauDeJeu configurationDeBase(Pioche pioche){
         PlateauDeJeu plateau = new PlateauDeJeu();
         //Ajout des Personnages au plateau de jeu
         plateau.ajouterPersonnage(architecte);
@@ -140,6 +142,6 @@ public class Configuration {
 
         pioche.melanger();
 
-        return pioche;
+        return plateau;
     }
 }
