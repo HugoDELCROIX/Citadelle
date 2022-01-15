@@ -22,6 +22,6 @@ public class Marchande extends Personnage {
     }
 
     public void utiliserPouvoirAvatar() {
-        this.joueur.ajouterPieces(1);
+        this.utiliserPouvoir();
     }
 }

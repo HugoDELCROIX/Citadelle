@@ -6,7 +6,6 @@ import controleur.Interaction;
 
 public class Assassin extends Personnage {
 
-
 	public Assassin() {
 		super("Assassin", 1, Caracteristiques.ASSASSIN);
 	}
@@ -32,22 +31,17 @@ public class Assassin extends Personnage {
 		while (continu);
 	}
 
-
 	public void utiliserPouvoirAvatar() {
 		Random rand = new Random();
 		int listeperso = rand.ints(0, getPlateau().getNombreJoueurs() + 1).findFirst().getAsInt();
 		Personnage personnageChoisi = this.getPlateau().getPersonnage(listeperso - 1);
-		boolean personnageAssa = false;
 
 		while (personnageChoisi.getNom().equals("Assassin")) {
 			listeperso = rand.ints(0, getPlateau().getNombreJoueurs() + 1).findFirst().getAsInt();
 			personnageChoisi = this.getPlateau().getPersonnage(listeperso - 1);
 		}
 
-		do {
-			personnageChoisi.setAssassine();
-			personnageAssa = true;
-		} while (personnageAssa == false);
+		personnageChoisi.setAssassine();
 	}
 
 }

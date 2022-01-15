@@ -13,8 +13,6 @@ public class Architecte extends Personnage {
     }
 
     public void utiliserPouvoirAvatar() {
-        for (int i = 0; i < 2; i++) {
-            this.getJoueur().ajouterQuartierDansMain(this.getPlateau().getPioche().piocher());
-        }
+        this.utiliserPouvoir();
     }
 }

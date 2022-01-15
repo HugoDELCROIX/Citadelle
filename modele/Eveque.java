@@ -6,9 +6,7 @@ public class Eveque extends Personnage {
         super("Eveque", 5, Caracteristiques.EVEQUE);
     }
 
-    public void utiliserPouvoir() {
-
-    }
+    public void utiliserPouvoir() {}
 
     public void percevoirRessourcesSpecifiques() {
         Quartier[] citeJ = this.getJoueur().getCite();
@@ -21,10 +19,6 @@ public class Eveque extends Personnage {
         }
     }
 
-
-    public void utiliserPouvoirAvatar() {
-
-    }
-
+    public void utiliserPouvoirAvatar() {}
 
 }
