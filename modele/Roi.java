@@ -31,10 +31,7 @@ public class Roi extends Personnage {
     }
 
     public void utiliserPouvoirAvatar() {
-        if (this.getJoueur() instanceof Joueur && !this.getAssassine()) {
-            this.getJoueur().setPossedeCouronne(true);
-            System.out.println(this.getJoueur().getNom() + " prends la couronne.");
-        }
+        this.utiliserPouvoir();
     }
 
 }
