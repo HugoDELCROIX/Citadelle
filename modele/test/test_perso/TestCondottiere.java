@@ -105,7 +105,7 @@ public class TestCondottiere {
 		System.out.println("");
 				
 		// utiliser le pouvoir du condottiere:		
-		condottiere.utiliserPouvoir();
+		condottiere.utiliserPouvoirAvatar();
 		
 		// on r�affiche la main de chaque joueur:
 		System.out.print("Main du Roi (" + roi.getJoueur().getNom() + "): ");

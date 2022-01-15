@@ -41,7 +41,7 @@ public class TestMarchande {
 		marchande.percevoirRessourcesSpecifiques();
 		Test.test(marchande.getJoueur().nbPieces() == 4,
 			"test du nombre de pi�ces d'or apr�s perception de ressources sp�cifiques avec 2 quartiers commer�ants");
-		marchande.utiliserPouvoir();
+		marchande.utiliserPouvoirAvatar();
 		Test.test(marchande.getJoueur().nbPieces() == 5,
 				"test du nombre de pi�ces d'or apr�s utilisation du pouvoir");
 			

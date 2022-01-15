@@ -34,7 +34,7 @@ public class TestAssassin {
 		
 		// on utilise le pouvoir de l'assassin
 		// NB: seul le roi peut �tre assassin� dans cette situation
-		assassin.utiliserPouvoir();
+		assassin.utiliserPouvoirAvatar();
 		Test.test(roi.getAssassine(),"le roi est assassin�");
 	}
 	

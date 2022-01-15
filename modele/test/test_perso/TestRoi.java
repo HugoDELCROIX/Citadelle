@@ -126,7 +126,7 @@ public class TestRoi {
 		System.out.println("TEST DE L'UTILISATION DU POUVOIR DU ROI");
 		Joueur joueur = new Joueur("Billy");
 		Roi roi = new Roi();
-		roi.utiliserPouvoir();
+		roi.utiliserPouvoirAvatar();
 		Test.test(roi.getJoueur() == null,
 				"test alors que le joueur n'est pas attribu�");
 		roi.setJoueur(joueur);

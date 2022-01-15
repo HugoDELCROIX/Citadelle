@@ -48,7 +48,7 @@ public class TestArchitecte {
 
 		Test.test(architecte.getJoueur().nbQuartiersDansMain() == 0,
 				"test du nombre de cartes dans la main avant l'utilisation du pouvoir");			
-		architecte.utiliserPouvoir();
+		architecte.utiliserPouvoirAvatar();
 		Test.test(architecte.getJoueur().nbQuartiersDansMain() == 2,
 				"test du nombre de cartes dans la main apr�s l'utilisation du pouvoir");
 			

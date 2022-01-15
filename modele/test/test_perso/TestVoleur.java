@@ -56,7 +56,7 @@ public class TestVoleur {
 		// on utilise le pouvoir du voleur
 		// NB: seul le roi peut �tre vol� dans cette situation
 		roi.ajouterPieces();
-		voleur.utiliserPouvoir();
+		voleur.utiliserPouvoirAvatar();
 		
 		// tests:
 		Test.test(roi.getVole(),"le roi est bien vol�");
