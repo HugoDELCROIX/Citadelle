@@ -65,10 +65,10 @@ public class Configuration {
     private static Personnage voleur = new Voleur();
 
     //Déclaration des Joueurs
-    private static Joueur j1 = new Joueur("Billy");
+    private static Joueur j1 = new Joueur("Bob");
     private static Joueur j2 = new Joueur("bot1");
     private static Joueur j3 = new Joueur("bot2");
-    private static Joueur j4 = new Joueur("bot4");
+    private static Joueur j4 = new Joueur("bot3");
 
     public static Pioche nouvellePioche() {
         Pioche pioche = new Pioche();

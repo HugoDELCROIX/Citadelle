@@ -35,7 +35,7 @@ public class Jeu {
 		} while (response != 3);
 		quitter();
 	}
-	
+
 	private void afficherLesRegles() {
 		System.out.println("Regles");
 	}
@@ -115,7 +115,7 @@ public class Jeu {
 					//on affiche la main du joueur
 					System.out.println("Voici votre Main :");
 					for (int i = 0; i < this.plateauDeJeu.getPersonnage(personnage).getJoueur().nbQuartiersDansMain(); i++) {
-						if(this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i)!=null){
+						if (this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i) != null) {
 							System.out.println((i + 1) + " " + this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getNom() + " - type : " +
 								this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getType() + " - pièces : " +
 								this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getCout());
@@ -256,14 +256,14 @@ public class Jeu {
 			System.out.println("Un personnage est écarté face cachée");
 			if (joueurs.get(0).getPossedeCouronne())
 				System.out.println("Vous avez la couronne ! ");
-			for (int i = 0; i < this.plateauDeJeu.getNombrePersonnages(); i++) {
-				if (this.plateauDeJeu.getPersonnage(i).getJoueur() == null && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceCache.getNom()) && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceVisible1.getNom()) && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceVisible2.getNom())) {
-					System.out.println((i + 1) + " " + this.plateauDeJeu.getPersonnage(i).getNom());
-				}
+				for (int i = 0; i < this.plateauDeJeu.getNombrePersonnages(); i++) {
+					if (this.plateauDeJeu.getPersonnage(i).getJoueur() == null && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceCache.getNom()) && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceVisible1.getNom()) && !this.plateauDeJeu.getPersonnage(i).getNom().equals(persoFaceVisible2.getNom())) {
+						System.out.println((i + 1) + " " + this.plateauDeJeu.getPersonnage(i).getNom());
+					}
 			}
 			if (!joueurs.get(0).isSimule()) {
 				do {
-					System.out.println("Quel personnage choisissez vous ?");					
+					System.out.println("Quel personnage choisissez vous ?");
 					response = Interaction.lireUnEntier(1, this.plateauDeJeu.getNombrePersonnages() + 1);
 				} while (this.plateauDeJeu.getPersonnage(response - 1).getJoueur() != null || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceCache.getNom()) || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceVisible1.getNom()) || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceVisible2.getNom()));
 				this.plateauDeJeu.getPersonnage(response - 1).setJoueur(joueurs.get(0));
