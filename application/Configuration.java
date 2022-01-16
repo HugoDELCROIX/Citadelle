@@ -65,10 +65,10 @@ public class Configuration {
     private static Personnage voleur = new Voleur();
 
     //Déclaration des Joueurs
-    private static Joueur j1 = new Joueur("Joueur 1");
-    private static Joueur j2 = new Joueur("Joueur 2");
-    private static Joueur j3 = new Joueur("Joueur 3");
-    private static Joueur j4 = new Joueur("Joueur 4");
+    private static Joueur j1 = new Joueur("Billy");
+    private static Joueur j2 = new Joueur("bot1");
+    private static Joueur j3 = new Joueur("bot2");
+    private static Joueur j4 = new Joueur("bot4");
 
     public static Pioche nouvellePioche() {
         Pioche pioche = new Pioche();
@@ -139,6 +139,8 @@ public class Configuration {
         pioche.ajouter(tripot);
 
         pioche.melanger();
+
+        plateau.setPioche(pioche);
 
         return plateau;
     }

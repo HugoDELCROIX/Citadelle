@@ -53,6 +53,7 @@ public class Jeu {
 	private void initialisation() {
 		//ici on initialise le plateau avec la configuration de base du projet
 		this.plateauDeJeu = Configuration.configurationDeBase(Configuration.nouvellePioche());
+
 		//on ajoute deux pièces à  tous les joueurs
 		for (int i = 0; i < this.plateauDeJeu.getNombreJoueurs(); i++) {
 			this.plateauDeJeu.getJoueur(i).ajouterPieces(2);
@@ -61,7 +62,7 @@ public class Jeu {
 				this.plateauDeJeu.getJoueur(i).ajouterQuartierDansMain(this.plateauDeJeu.getPioche().piocher());
 			}
 		}
-		//ici on attribue la couronne à  un jooueur aléatoire
+		//ici on attribue la couronne à  un joueur aléatoire
 		this.plateauDeJeu.getJoueur(this.generateur.nextInt(this.plateauDeJeu.getNombreJoueurs())).setPossedeCouronne(true);
 	}
 
@@ -114,9 +115,11 @@ public class Jeu {
 					//on affiche la main du joueur
 					System.out.println("Voici votre Main :");
 					for (int i = 0; i < this.plateauDeJeu.getPersonnage(personnage).getJoueur().nbQuartiersDansMain(); i++) {
-						System.out.println((i + 1) + " " + this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getNom() + " - type : " +
-							this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getType() + " - pièces : " +
-							this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getCout());
+						if(this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i)!=null){
+							System.out.println((i + 1) + " " + this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getNom() + " - type : " +
+								this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getType() + " - pièces : " +
+								this.plateauDeJeu.getPersonnage(personnage).getJoueur().getMain().get(i).getCout());
+						}
 					}
 				}
 				//on affiche la cité du joueur
@@ -260,7 +263,7 @@ public class Jeu {
 			}
 			if (!joueurs.get(0).isSimule()) {
 				do {
-					System.out.println("Quel personnage choisissez vous ?");
+					System.out.println("Quel personnage choisissez vous ?");					
 					response = Interaction.lireUnEntier(1, this.plateauDeJeu.getNombrePersonnages() + 1);
 				} while (this.plateauDeJeu.getPersonnage(response - 1).getJoueur() != null || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceCache.getNom()) || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceVisible1.getNom()) || this.plateauDeJeu.getPersonnage(response - 1).getNom().equals(persoFaceVisible2.getNom()));
 				this.plateauDeJeu.getPersonnage(response - 1).setJoueur(joueurs.get(0));
@@ -301,7 +304,7 @@ public class Jeu {
 				System.out.println((i + 1) + " " + quartiers[i].getNom() + " - type : " +
 					quartiers[i].getType() + " - pièces : " + quartiers[i].getCout());
 			}
-			System.out.println("Quelle carte voulez vous gardez ? : ");
+			System.out.println("Quelle carte voulez-vous garder ? : ");
 			int carte = 0;
 			if (!plateauDeJeu.getPersonnage(personnage).getJoueur().isSimule())
 				carte = Interaction.lireUnEntier(1, 3);

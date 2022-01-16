@@ -27,6 +27,10 @@ public class PlateauDeJeu {
         return this.pioche;
     }
 
+    public void setPioche(Pioche pioche){
+        this.pioche = pioche;
+    }
+
     public Personnage getPersonnage(int i) { //Retourne un personnage parmis la liste des personnages
         if (0 <= i && i <= 8) {
             return listePersonnages[i];
