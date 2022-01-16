@@ -90,7 +90,7 @@ public class Condottiere extends Personnage {
             int listeJoueur = rand.nextInt(this.getPlateau().getNombreJoueurs() + 1);
             Joueur joueurChoisi = getPlateau().getJoueur(listeJoueur - 1);
 
-            while (joueurChoisi.nbQuartiersDansCite() == 0 || (joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine() == false)) {
+            while (joueurChoisi.nbQuartiersDansCite() == 0 || ((joueurChoisi.getPersonnage().getNom().equals("Eveque") && joueurChoisi.getPersonnage().getAssassine() == false))) {
                 listeJoueur = rand.nextInt(this.getPlateau().getNombreJoueurs() + 1);
                 joueurChoisi = getPlateau().getJoueur(listeJoueur - 1);
             }
@@ -109,4 +109,5 @@ public class Condottiere extends Personnage {
 
         } while (choixDuJoueur == false);
     }
+    
 }
